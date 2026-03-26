@@ -217,8 +217,13 @@ button {
     font-weight: 700;
 }
 
-canvas {
-    margin-top: 24px;
+/* Компактный размер диаграммы */
+#chart {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    max-height: 320px;
+    margin: 24px auto 0;
 }
 
 /* Кнопка переключения темы: правый нижний угол */
