@@ -190,6 +190,18 @@ button {
     background: var(--balance-card);
 }
 
+.balance-line {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
 .list {
     margin-top: 20px;
 }
