@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семейный бюджет - калькулятор</title>
+    <meta name="description" content="Калькулятор учета семейных финансов.">
+
+    <!-- Основные стили проекта -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Библиотека диаграмм -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Отдельная страница с функционалом калькулятора -->
+    <main id="budget-app" class="container">
+        <!-- Простая навигация обратно на приветственную страницу -->
+        <p><a href="./index.html" class="hero__cta">← На страницу приветствия</a></p>
+
+        <h2>💰 Учёт семейного бюджета</h2>
+
+        <!-- Форма добавления операции -->
+        <section class="form">
+            <input type="text" id="desc" placeholder="Описание">
+            <input type="number" id="amount" placeholder="Сумма">
+            <input type="date" id="date">
+
+            <select id="type">
+                <option value="income">Доход</option>
+                <option value="expense">Расход</option>
+            </select>
+
+            <select id="category">
+                <option>Зарплата</option>
+                <option>Еда</option>
+                <option>Транспорт</option>
+                <option>Развлечения</option>
+                <option>Жильё</option>
+                <option>Другое</option>
+            </select>
+
+            <button id="addBtn" type="button">Добавить</button>
+        </section>
+
+        <!-- Фильтры списка операций -->
+        <section class="filters">
+            <select id="filterType">
+                <option value="all">Все</option>
+                <option value="income">Доходы</option>
+                <option value="expense">Расходы</option>
+            </select>
+
+            <select id="filterCategory">
+                <option value="all">Все категории</option>
+                <option>Зарплата</option>
+                <option>Еда</option>
+                <option>Транспорт</option>
+                <option>Развлечения</option>
+                <option>Жильё</option>
+                <option>Другое</option>
+            </select>
+
+            <button id="exportBtn" type="button">📥 Экспорт CSV</button>
+        </section>
+
+        <!-- Краткая сводка по бюджету -->
+        <section class="summary">
+            <div class="card income">
+                <h3>Доход</h3>
+                <p id="income">0</p>
+            </div>
+
+            <div class="card expense">
+                <h3>Расход</h3>
+                <p id="expense">0</p>
+            </div>
+
+            <div class="card balance">
+                <h3>Баланс</h3>
+                <p id="balance">0</p>
+            </div>
+        </section>
+
+        <!-- Список операций -->
+        <section class="list" id="list"></section>
+
+        <!-- График соотношения доходов и расходов -->
+        <canvas id="chart"></canvas>
+    </main>
+
+    <!-- Переключатель темы в правом нижнем углу -->
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Переключить тему">
+        <span id="themeToggleIcon">🌙</span>
+        <span id="themeToggleText">Тёмная</span>
+    </button>
+
+    <!-- Основная логика приложения -->
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
